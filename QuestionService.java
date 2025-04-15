@@ -21,18 +21,36 @@ public class QuestionService {
         for (Question q : questions){
         System.out.print(q.getId() + ". " );
         System.out.println(q.getQuestion());
-        System.out.print("A. "+ q.getOpt1()+ "   ");
+        System.out.print("   A. "+ q.getOpt1()+ "   ");
         System.out.println("B. " + q.getOpt2());
-        System.out.print("C. " + q.getOpt3()+ "  ");
+        System.out.print("   C. " + q.getOpt3()+ "  ");
         System.out.println("D. " + q.getOpt4());
+        System.out.print("Enter the Answer :  ");
         Scanner sc = new Scanner(System.in);
         selection[i] = sc.nextLine();
         i++;
         }
 
-        for(String s : selection){
-            System.out.println(s);
-        }
+        // for(String s : selection){
+        //     System.out.println(s);
+        // }
     }
 
+    public void printScore()
+    {
+        int score = 0;
+        for(int i = 0;i<questions.length;i++)
+        {
+            Question que = questions[i];
+            String actualAnswer = que.getAnswer();
+            String userAnswer = selection[i];
+
+            if (actualAnswer.equals(userAnswer))
+            {
+                score++;
+
+            }
+        }
+        System.out.println("Your Score : " + score);
+    }
 }

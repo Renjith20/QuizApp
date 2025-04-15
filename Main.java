@@ -3,6 +3,7 @@ public class Main{
 
         QuestionService service = new QuestionService();
         service.PlayQuiz();
+        service.printScore();
         
     }
 }
